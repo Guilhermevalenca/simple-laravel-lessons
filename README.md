@@ -4,6 +4,6 @@ Lições simples para ajudar aqueles que estão começando agorá a utilizar o L
 ### As branchs serão dividas por aulas!!!
 ### links:
 
-#### [Vídeos aulas](youtube.com)
+#### [Vídeos aulas](https://www.youtube.com/playlist?list=PL1ZerOAhaPfyTTT76o8vkv0dPgZmBNRKE)
 #### [Intagram](https://www.instagram.com/guilherme_0601)
 #### [GitHub](github.com/Guilhermevalenca)
