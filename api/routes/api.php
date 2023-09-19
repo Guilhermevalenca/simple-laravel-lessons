@@ -26,9 +26,11 @@ Route::get('testando/{param1}/{param2?}',function (int $param1,String $param2 = 
     return response($response, 200);
 });
 Route::post('testando', function (Request $request) {
-    $response = [
-        'json' => $request->input(),
-        'success' => true
-    ];
+    //$response = $request->only(['a','b']);
+    $response = $request->validate([
+        'name' => 'required',
+        'email' => 'required|email',
+        'surname' => 'nullable'
+    ]);
     return response($response, 200);
 });
