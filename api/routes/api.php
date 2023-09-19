@@ -17,3 +17,11 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::get('testando/{param1}/{param2}',function (int $param1,String $param2) {
+    $response = [
+        'param1' => $param1,
+        'param2' => $param2
+    ];
+    return response($response, 200);
+});
