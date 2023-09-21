@@ -12,7 +12,7 @@ class TodoController extends Controller
      */
     public function index()
     {
-        $todos = Todo::all();
+        $todos = Todo::paginate(5);
         return response($todos, 200);
     }
 
