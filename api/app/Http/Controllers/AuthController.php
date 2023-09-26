@@ -15,7 +15,7 @@ class AuthController extends Controller
         ]);
         if(Auth::attempt($validation)) {
             $response = [
-                'token' =>  $request->user()->createToken('meu_token'),
+                'token' =>  $request->user()->createToken('meu_token',['todos','tests','success']),
                 'success' => true
             ];
             return response($response, 200);
@@ -24,7 +24,8 @@ class AuthController extends Controller
     }
     public function logout(Request $request)
     {
-        return response($request->user()->currentAccessToken()->delete(), 200);
+        $request->user()->currentAccessToken()->delete();
+        return response('Revogate token', 200);
     }
     public function me(Request $request)
     {

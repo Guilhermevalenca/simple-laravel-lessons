@@ -10,9 +10,15 @@ Route::prefix('todo')
 
        Route::get('','index');
        Route::get('{id}','show');
-       Route::post('','store');
-       Route::put('{id}','update');
-       Route::patch('{id}','updateStatus');
-       Route::delete('','destroy');
+
+       Route::middleware(['auth:sanctum','ability:todos'])
+           ->group(function () {
+
+               Route::post('','store');
+               Route::put('{id}','update');
+               Route::patch('{id}','updateStatus');
+               Route::delete('','destroy')->middleware(['ability:delete_todo']);
+
+           });
 
     });
